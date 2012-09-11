@@ -1351,8 +1351,8 @@ static int ion_share_mmap(struct file *file, struct vm_area_struct *vma)
 	struct ion_handle *handle;
 	int ret;
 	unsigned long flags = file->f_flags & O_DSYNC ?
-				ION_SET_CACHE(UNCACHED) :
-				ION_SET_CACHE(CACHED);
+				ION_SET_UNCACHED(0) :
+				ION_SET_CACHED(0);
 
 
 	pr_debug("%s: %d\n", __func__, __LINE__);

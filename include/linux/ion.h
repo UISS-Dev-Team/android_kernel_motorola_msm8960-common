@@ -116,9 +116,6 @@ enum ion_fixed_position {
 #define ION_QSECOM_HEAP_NAME	"qsecom"
 #define ION_FMEM_HEAP_NAME	"fmem"
 
-#define CACHED          1
-#define UNCACHED        0
-
 #define ION_CACHE_SHIFT 0
 
 #define ION_SET_CACHE(__cache)  ((__cache) << ION_CACHE_SHIFT)

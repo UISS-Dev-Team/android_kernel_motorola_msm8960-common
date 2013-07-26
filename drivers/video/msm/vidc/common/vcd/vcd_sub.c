@@ -2492,7 +2492,7 @@ u32 vcd_handle_first_fill_output_buffer_for_enc(
 				if (vcd_get_ion_status()) {
 					kernel_vaddr = (u8 *)ion_map_kernel(
 						cctxt->vcd_ion_client,
-						frm_entry->buff_ion_handle);
+						frm_entry->buff_ion_handle, 0);
 					if (IS_ERR_OR_NULL(kernel_vaddr)) {
 						VCD_MSG_ERROR("%s: 0x%x = "\
 						"ion_map_kernel(0x%x, 0x%x) fail",
@@ -2565,7 +2565,7 @@ u32 vcd_handle_first_fill_output_buffer_for_enc(
 	if (kernel_vaddr) {
 		if (!IS_ERR_OR_NULL(frm_entry->buff_ion_handle)) {
 			ion_map_kernel(cctxt->vcd_ion_client,
-				frm_entry->buff_ion_handle);
+				frm_entry->buff_ion_handle, 0);
 		} else {
 			VCD_MSG_ERROR("%s: Invalid ion_handle (0x%x)",
 				__func__, (u32)frm_entry->buff_ion_handle);
